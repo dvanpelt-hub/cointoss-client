@@ -1,10 +1,54 @@
-/* .coin-details-head {
-  background-color: #0e0b31;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Quicksand:wght@300&display=swap");
+.details-app {
+  font-size: 13px;
+  font-family: "Major Mono", Arial, sans-serif;
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+  background: linear-gradient(-65deg, #120838, #2e198f, #5b1888, #a81aad);
+  /* linear-gradient(-45deg, #0d0435, #351481, #5b2ba8, #7d38bd); */
+  background-size: 350% 350%;
+  position: relative;
+  animation: change 8s ease-in-out infinite;
+}
+
+.details-head h1 {
+  font-size: 30px;
+  letter-spacing: 2px;
+  text-align: center;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1.5rem 3rem;
+}
+
+.tweet-details {
+  margin-top: 25%;
+}
+
+.tweets li {
+  font-size: 17px;
+  text-align: center;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+@keyframes change {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+h2,
+p {
+  text-align: center;
+  margin: 20px;
+}

@@ -1,14 +1,3 @@
-/* .cointoss-head {
-  background-color: #0e0b31;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
-
 @import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Quicksand:wght@300&display=swap");
 .landing-page {
@@ -17,23 +6,30 @@
   width: 100%;
   height: 100vh;
   color: #fff;
-  background: linear-gradient(-45deg, #04020c, #170b4d, #401974, #721775);
-  /* linear-gradient(-45deg, #0d0435, #351481, #5b2ba8, #7d38bd); */
-  background-size: 150% 150%;
+  background: linear-gradient(-65deg, #120838, #2e198f, #5b1888, #a81aad);
+  background-size: 350% 350%;
   position: relative;
-  animation: change 8s ease-in-out infinite;
+  animation: change 7s ease-in-out infinite;
 }
 
-h1 {
+.cointoss-head h1 {
   font-size: 20px;
   letter-spacing: 2px;
   text-align: center;
   position: absolute;
-  border: 1.5px solid #fff;
+  border: 0.8px solid #fff;
+  border-radius: 10px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 1.5rem 3rem;
+  padding: 1rem 1rem;
+}
+
+.cointoss-head h1:hover {
+  color: rgb(255, 0, 149);
+  cursor: pointer;
+  background-color: rgb(128, 0, 96);
+  border-width: 0px;
 }
 
 @keyframes change {

@@ -3,11 +3,20 @@ import Nav from "../Nav/Nav";
 
 function CoinDetails() {
   return (
-    <div className="App">
-      <header className="coin-details-head">
+    <div className="details-app">
+      <header className="details-head">
         <h1>CoinDetails</h1>
       </header>
       <Nav />
+      <section className="tweet-details">
+        <ul className="tweets">
+          <li>Tweet 1</li>
+          <li>Tweet 2</li>
+          <li>Tweet 3</li>
+          <li>Tweet 4</li>
+          <li>Tweet 5</li>
+        </ul>
+      </section>
     </div>
   );
 }
