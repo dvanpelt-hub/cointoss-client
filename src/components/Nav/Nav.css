@@ -1,0 +1,20 @@
+.Nav {
+  text-align: end;
+}
+
+.landing,
+.icos,
+.details {
+  text-decoration: none;
+  color: rgb(240, 140, 198);
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+}
+
+.landing:hover,
+.icos:hover,
+.details:hover {
+  color: white;
+  cursor: pointer;
+}
