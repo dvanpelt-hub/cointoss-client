@@ -12,6 +12,7 @@ const CoinDetails = (props) => {
   const [icoDate, seticoDate] = useState("Not Available");
   const [coinHomepage, setCoinHomepage] = useState("Not Available");
   let { id } = useParams();
+  let { setCoinDetails } = props;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,7 +26,7 @@ const CoinDetails = (props) => {
             return response.json();
           })
           .then((responseJson) => {
-            props.setCoinDetails(responseJson);
+            setCoinDetails(responseJson);
             setCoinDescription(responseJson.description.en);
             setCoinImage(responseJson.image.small);
             setCoinFollowers(responseJson.community_data.twitter_followers);
@@ -37,9 +38,15 @@ const CoinDetails = (props) => {
       }
     };
     fetchData();
-  }, []);
-
-  console.log(props.coinDetails);
+  }, [
+    id,
+    setCoinDetails,
+    setCoinDescription,
+    setCoinImage,
+    setCoinFollowers,
+    seticoDate,
+    setCoinHomepage,
+  ]);
 
   return (
     <div className="details-app">
@@ -56,7 +63,7 @@ const CoinDetails = (props) => {
       <section className="coin-details">
         <img
           src={coinImage}
-          alt="image of the symbol for the selected crypto-currency"
+          alt="symbol for the selected crypto-currency"
         ></img>
         <h2>{props.coinDetails.name}</h2>
         <p>{coinDescription}</p>
