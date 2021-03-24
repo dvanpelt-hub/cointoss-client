@@ -5,17 +5,23 @@ import "./Nav.css";
 function Nav() {
   return (
     <div className="Nav">
-      <Link className="landing" to="/">
-        Landing Page
-      </Link>
-      <br />
-      <Link className="icos" to="/icos">
-        ICOs
-      </Link>
-      <br />
-      <Link className="details" to="/details">
-        ICO Details
-      </Link>
+      <div className="dropdown">
+        <span>Menu</span>
+        <div className="dropdown-content">
+          <Link className="landing" to="/">
+            Landing Page
+          </Link>
+          <Link className="coins" to="/coins">
+            Coins
+          </Link>
+          <Link className="signup" to="/signup">
+            Sign Up
+          </Link>
+          <Link className="login" to="/login">
+            Log in
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

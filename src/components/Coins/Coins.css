@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Quicksand:wght@300&display=swap");
-.details-app {
+.coins-app {
   font-size: 13px;
   font-family: "Quicksand", Arial, sans-serif;
   width: 100%;
-  min-height: 250vh;
-  max-height: fit-content;
+  height: 150vh;
   color: #fff;
   background: linear-gradient(-65deg, #120838, #2e198f, #5b1888, #a81aad);
   background-size: 350% 350%;
@@ -12,61 +11,22 @@
   animation: change 14s ease-in-out infinite;
 }
 
-.details-head h1 {
+.coins-head h1 {
   font-size: 30px;
   letter-spacing: 2px;
   text-align: center;
   position: absolute;
+  top: 14%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 1.5rem 3rem;
 }
 
-.coin-details {
-  margin-top: 30%;
-  font-size: 15px;
-  text-align: center;
-}
-
-.coinLink {
-  color: white;
-  text-decoration: none;
-  padding: 15px;
-}
-
-.coinLink:hover {
-  background-color: rgb(147, 39, 161);
-  border-radius: 10px;
-}
-
-.coins li {
-  color: white;
-  font-size: 17px;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  list-style-type: none;
-}
-
-.getDetailsButton {
-  padding: 10px;
-  border-radius: 10px;
-  border: none;
-  background-color: rgb(147, 39, 161);
-  color: white;
-  font-family: "Quicksand", Arial, sans-serif;
-  letter-spacing: 2px;
-  font-weight: bolder;
-}
-
-.getDetailsButton:hover {
-  background-color: rgb(212, 0, 255);
-  cursor: pointer;
-}
-
-.getDetailsButtonArea {
-  text-align: center;
-  margin: 3rem;
+.coins-holdings-table table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 45%;
+  width: 80%;
 }
 
 @keyframes change {
@@ -85,4 +45,68 @@ h2,
 p {
   text-align: center;
   margin: 20px;
+}
+
+.listedCoins {
+  text-align: left;
+  font-size: 15px;
+  font-family: "Quicksand", Arial, sans-serif;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+th {
+  font-size: 20px;
+  padding: 10px;
+}
+
+th.coinHead {
+  text-align: left;
+}
+
+th.voteHead {
+  text-align: right;
+}
+
+a.coinOfTable {
+  color: white;
+  text-decoration: none;
+  left: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+a.coinOfTable:hover {
+  background-color: rgb(147, 39, 161);
+  border-radius: 10px;
+  min-width: 40px;
+}
+
+td.voteOfTable {
+  text-align: right;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.getCoinsButton {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(147, 39, 161);
+  color: white;
+  font-family: "Quicksand", Arial, sans-serif;
+  letter-spacing: 2px;
+  font-weight: bolder;
+}
+
+.getCoinsButton:hover {
+  background-color: rgb(212, 0, 255);
+  cursor: pointer;
+}
+
+.getCoinsButtonArea {
+  text-align: center;
+  margin: 1rem;
 }
