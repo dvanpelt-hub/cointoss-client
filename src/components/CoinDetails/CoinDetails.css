@@ -3,8 +3,8 @@
   font-size: 13px;
   font-family: "Quicksand", Arial, sans-serif;
   width: 100%;
-  min-height: 250vh;
-  max-height: fit-content;
+  min-height: 180vh;
+  max-height: 300vh;
   color: #fff;
   background: linear-gradient(-65deg, #120838, #2e198f, #5b1888, #a81aad);
   background-size: 350% 350%;
@@ -13,17 +13,29 @@
 }
 
 .details-head h1 {
-  font-size: 30px;
+  font-size: 28px;
   letter-spacing: 2px;
   text-align: center;
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 1.5rem 3rem;
+  margin-top: 3rem;
+}
+
+.votes-area {
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.votes-area span {
+  padding: 10px;
 }
 
 .coin-details {
-  margin-top: 30%;
+  margin-top: 15%;
   font-size: 15px;
   text-align: center;
 }
@@ -48,7 +60,7 @@
   list-style-type: none;
 }
 
-.getDetailsButton {
+.getVotesButton {
   padding: 10px;
   border-radius: 10px;
   border: none;
@@ -57,16 +69,19 @@
   font-family: "Quicksand", Arial, sans-serif;
   letter-spacing: 2px;
   font-weight: bolder;
+  margin: 1rem;
+  width: 120px;
+  text-align: center;
 }
 
-.getDetailsButton:hover {
+.getVotesButton:hover {
   background-color: rgb(212, 0, 255);
   cursor: pointer;
 }
 
-.getDetailsButtonArea {
+.getVotesButtonArea {
   text-align: center;
-  margin: 3rem;
+  margin-top: 1rem;
 }
 
 @keyframes change {

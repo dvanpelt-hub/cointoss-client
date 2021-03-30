@@ -60,6 +60,10 @@ const App = () => {
               <CoinDetails
                 coinDetails={coinDetails}
                 setCoinDetails={setCoinDetails}
+                upVotes={upVotes}
+                setUpVotes={setUpVotes}
+                downVotes={downVotes}
+                setDownVotes={setDownVotes}
               />
             );
           }}

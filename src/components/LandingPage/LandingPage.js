@@ -15,7 +15,10 @@ function LandingPage() {
         <Nav />
         <div className="slogan">
           <section className="slogan">
-            <h2>ICO forecasting made easier</h2>
+            <h2>
+              Trending cryptocurrencies in the palm of your hand. Cast your
+              votes!
+            </h2>
             <div className="landing-info">
               <p>This is information for the app. How to use it, etc.</p>
             </div>
