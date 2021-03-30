@@ -8,7 +8,7 @@ let DB_URL = process.env.REACT_APP_DATABASE_URL;
 const Coins = (props) => {
   const fetchData = async () => {
     try {
-      const url = `${DB_URL}`;
+      const url = `${DB_URL}/api/v1/coins`;
       const options = {
         method: "GET",
         mode: "cors",
