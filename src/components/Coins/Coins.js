@@ -176,9 +176,9 @@ const Coins = (props) => {
         <table>
           <thead>
             <tr className="tableRow">
-              <th className="coinHead" scope="column1">
-                Coin
-              </th>
+              {/* <th className="coinHead" scope="column1">
+                Coins
+              </th> */}
               {/* <th className="voteHead" scope="column2">
                 Votes
               </th> */}

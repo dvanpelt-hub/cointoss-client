@@ -111,3 +111,90 @@ h3 {
 p {
   font-size: 16px;
 }
+
+@media screen and (min-width: 500px) {
+  .details-app {
+    font-size: 13px;
+    width: 100%;
+    min-height: 180vh;
+    max-height: 300vh;
+    color: #fff;
+  }
+
+  .details-head h1 {
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    padding: 1.5rem 3rem;
+    margin-top: 3rem;
+  }
+
+  .votes-area {
+    font-size: 24px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  .votes-area span {
+    padding: 10px;
+  }
+
+  .coin-details {
+    margin-top: 5%;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .coinLink {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    font-size: 24px;
+  }
+
+  .coinLink:hover {
+    background-color: rgb(147, 39, 161);
+    border-radius: 10px;
+  }
+
+  .coins li {
+    color: white;
+    font-size: 28px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    list-style-type: none;
+  }
+
+  .getVotesButton {
+    padding: 20px;
+    font-weight: bolder;
+    margin: 3rem;
+    width: 120px;
+    text-align: center;
+    font-size: 25px;
+  }
+
+  .getVotesButtonArea {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  h2,
+  h3,
+  p {
+    text-align: center;
+    margin: 20px;
+  }
+
+  h3 {
+    font-size: 35px;
+  }
+
+  p {
+    font-size: 26px;
+  }
+}
