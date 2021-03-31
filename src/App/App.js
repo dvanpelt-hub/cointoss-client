@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import LandingPage from "../components/LandingPage/LandingPage";
 import Coins from "../components/Coins/Coins";
@@ -8,20 +8,12 @@ import Login from "../components/Login/Login";
 import "./App.css";
 
 const App = () => {
-  let URL = process.env.REACT_APP_GECKO_TRENDING;
-  let [currentCoins, setCurrentCoins] = React.useState([]);
   let [coinDetails, setCoinDetails] = React.useState([]);
   let [upVotes, setUpVotes] = React.useState(0);
   let [downVotes, setDownVotes] = React.useState(0);
-
-  const getCoins = () => {
-    fetch(URL)
-      .then((response) => response.json())
-      .then((responseJson) => {
-        setCurrentCoins(responseJson.coins);
-      })
-      .catch((error) => console.log("error", error));
-  };
+  let [dbContents, setDbContents] = useState([]);
+  let [matchedCoins, setMatchedCoins] = useState([]);
+  let [currentCoins, setCurrentCoins] = useState([]);
 
   const updateUpVotes = () => {
     setUpVotes((upVotes += 1));
@@ -41,13 +33,17 @@ const App = () => {
           render={() => {
             return (
               <Coins
-                getCoins={getCoins}
-                currentCoins={currentCoins}
                 coinDetails={coinDetails}
                 updateUpVotes={updateUpVotes}
                 updateDownVotes={updateDownVotes}
                 upVotes={upVotes}
                 downVotes={downVotes}
+                dbContents={dbContents}
+                setDbContents={setDbContents}
+                matchedCoins={matchedCoins}
+                setMatchedCoins={setMatchedCoins}
+                currentCoins={currentCoins}
+                setCurrentCoins={setCurrentCoins}
               />
             );
           }}
@@ -64,6 +60,12 @@ const App = () => {
                 setUpVotes={setUpVotes}
                 downVotes={downVotes}
                 setDownVotes={setDownVotes}
+                dbContents={dbContents}
+                setDbContents={setDbContents}
+                matchedCoins={matchedCoins}
+                setMatchedCoins={setMatchedCoins}
+                currentCoins={currentCoins}
+                setCurrentCoins={setCurrentCoins}
               />
             );
           }}

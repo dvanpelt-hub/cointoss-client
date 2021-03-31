@@ -11,21 +11,24 @@ const CoinDetails = (props) => {
   );
   const [coinImage, setCoinImage] = useState("");
   const [coinFollowers, setCoinFollowers] = useState(0);
-  // const [icoDate, seticoDate] = useState("Not Available");
   const [coinHomepage, setCoinHomepage] = useState("Not Available");
   const [currentPrice, setCurrentPrice] = useState("Not Available");
+  let [matchedUpVotes, setMatchedUpVotes] = useState(0);
+  let [matchedDownVotes, setMatchedDownVotes] = useState(0);
   let { id } = useParams();
-  let { setCoinDetails, upVotes, downVotes, setUpVotes, setDownVotes } = props;
-  const DB_URL = process.env.REACT_APP_TEST_URL;
+  let { setCoinDetails } = props;
+  const DB_URL = process.env.REACT_APP_DATABASE_URL;
 
   const updateUpVotes = () => {
-    setUpVotes((upVotes += 1));
-    return upVotes;
+    setMatchedUpVotes((matchedUpVotes += 1));
+    console.log(matchedUpVotes);
+    // return matchedUpVotes;
   };
 
   const updateDownVotes = () => {
-    setDownVotes((downVotes += 1));
-    return downVotes;
+    setMatchedDownVotes((matchedDownVotes += 1));
+    console.log(matchedDownVotes);
+    // return matchedDownVotes;
   };
 
   useEffect(() => {
@@ -42,13 +45,11 @@ const CoinDetails = (props) => {
             return response.json();
           })
           .then((responseJson) => {
-            // console.log(responseJson);
             setCurrentPrice(responseJson.market_data.current_price.usd);
             setCoinDetails(responseJson);
             setCoinDescription(responseJson.description.en);
             setCoinImage(responseJson.image.small);
             setCoinFollowers(responseJson.community_data.twitter_followers);
-            // seticoDate(responseJson.ico_data.ico_start_date);
             setCoinHomepage(responseJson.links.homepage[0]);
           });
       } catch (error) {
@@ -63,15 +64,13 @@ const CoinDetails = (props) => {
     setCoinDescription,
     setCoinImage,
     setCoinFollowers,
-    // seticoDate,
     setCoinHomepage,
   ]);
 
-  // NEED TO FIX WEBSITE AND ICO DATE CALL //
   const updateVotes = () => {
     const postData = async () => {
       try {
-        const url = `${DB_URL}/`;
+        const url = `${DB_URL}api/v1/coins`;
         const options = {
           method: "POST",
           mode: "cors",
@@ -81,8 +80,8 @@ const CoinDetails = (props) => {
           },
           body: JSON.stringify({
             ticker_symbol: id,
-            up_votes: upVotes,
-            down_votes: downVotes,
+            up_votes: matchedUpVotes,
+            down_votes: matchedDownVotes,
           }),
         };
         await fetch(url, options)
@@ -93,9 +92,8 @@ const CoinDetails = (props) => {
             return response.json();
           })
           .then((responseJson) => {
-            console.log(responseJson);
-            // setUpVotes(responseJson.up_votes);
-            // setDownVotes(responseJson.down_votes);
+            setMatchedUpVotes(responseJson.up_votes);
+            setMatchedDownVotes(responseJson.down_votes);
             return responseJson;
           });
       } catch (err) {
@@ -104,6 +102,37 @@ const CoinDetails = (props) => {
     };
     postData();
   };
+
+  useEffect(() => {
+    const fetchVotes = async () => {
+      try {
+        const votesURL = `${DB_URL}api/v1/coins/${id}`;
+        const options = {
+          method: "GET",
+          mode: "cors",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        };
+        fetch(votesURL, options)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Error: " + response.status);
+            }
+            return response.json();
+          })
+          .then((responseJson) => {
+            setMatchedUpVotes(parseInt(responseJson.up_votes));
+            console.log(matchedUpVotes);
+            setMatchedDownVotes(parseInt(responseJson.down_votes));
+          });
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchVotes();
+  }, [DB_URL, id]);
 
   return (
     <div className="details-app">
@@ -114,8 +143,8 @@ const CoinDetails = (props) => {
         </header>
       </div>
       <div className="votes-area">
-        <span>Up Votes: {upVotes}</span>
-        <span>Down Votes: {downVotes}</span>
+        <span>Up Votes: {matchedUpVotes}</span>
+        <span>Down Votes: {matchedDownVotes}</span>
       </div>
       <div className="getVotesButtonArea">
         <button onClick={updateUpVotes} className="getVotesButton">
@@ -125,12 +154,11 @@ const CoinDetails = (props) => {
           Down Vote
         </button>
         <button onClick={updateVotes} className="getVotesButton">
-          Test
+          Post
         </button>
-      </div>
-      <div>
-        {/* <p>{upVotes}</p> */}
-        {/* <p>{downVotes}</p> */}
+        {/* <button onClick={fetchVotes} className="getVotesButton">
+          Votes
+        </button> */}
       </div>
       <section className="coin-details">
         <img
@@ -140,7 +168,6 @@ const CoinDetails = (props) => {
         <h2>Current Price = ${parseFloat(currentPrice).toFixed(2)}</h2>
         <p>{coinDescription}</p>
         <p>Twitter Followers: {coinFollowers}</p>
-        {/* <p>ICO Date: {icoDate}</p> */}
         <a href={coinHomepage} className="coinLink">
           Website: {coinHomepage}
         </a>
