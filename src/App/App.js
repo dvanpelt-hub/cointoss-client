@@ -3,8 +3,8 @@ import { Switch, Route } from "react-router-dom";
 import LandingPage from "../components/LandingPage/LandingPage";
 import Coins from "../components/Coins/Coins";
 import CoinDetails from "../components/CoinDetails/CoinDetails";
-import Signup from "../components/Signup/Signup";
-import Login from "../components/Login/Login";
+// import Signup from "../components/Signup/Signup";
+// import Login from "../components/Login/Login";
 import "./App.css";
 
 const App = () => {
@@ -70,8 +70,8 @@ const App = () => {
             );
           }}
         />
-        <Route exact path="/Login" component={Login} />
-        <Route exact path="/Signup" component={Signup} />
+        {/* <Route exact path="/Login" component={Login} />
+        <Route exact path="/Signup" component={Signup} /> */}
       </Switch>
     </div>
   );
