@@ -14,29 +14,29 @@ const Coins = (props) => {
   // let [matchedVotes, setMatchedVotes] = React.useState([]);
 
   // Extraction of ticker_symbol from stored previously-voted on coins in database //
-  const extract1 = (array) => {
-    let firstList = [];
-    array.forEach((element) => {
-      firstList.push(element.ticker_symbol);
-    });
-    return firstList;
-  };
+  // const extract1 = (array) => {
+  //   let firstList = [];
+  //   array.forEach((element) => {
+  //     firstList.push(element.ticker_symbol);
+  //   });
+  //   return firstList;
+  // };
 
-  // Extraction of id (same as ticker_symbol in database) from state which was populated from the coin gecko API call. These values are the top 7 trending coins//
-  const extract2 = (array) => {
-    let secondList = [];
-    array.forEach((element) => {
-      secondList.push(element.item.id);
-    });
-    return secondList;
-  };
+  // // Extraction of id (same as ticker_symbol in database) from state which was populated from the coin gecko API call. These values are the top 7 trending coins//
+  // const extract2 = (array) => {
+  //   let secondList = [];
+  //   array.forEach((element) => {
+  //     secondList.push(element.item.id);
+  //   });
+  //   return secondList;
+  // };
 
-  // // Assigning extraction functions to valiables //
-  let firstList = extract1(dbContents);
-  let secondList = extract2(currentCoins);
+  // // // Assigning extraction functions to valiables //
+  // let firstList = extract1(dbContents);
+  // let secondList = extract2(currentCoins);
 
   // // Assigning 'matches' between two lists to variable //
-  const intersect = firstList.filter((element) => secondList.includes(element));
+  // const intersect = firstList.filter((element) => secondList.includes(element));
 
   // API Call to coin gecko for the top 7 trending crypto-currencies. Handled by the onClick button usage //
   const getCoins = () => {
@@ -54,7 +54,7 @@ const Coins = (props) => {
   // };
 
   // Responsible for calling database to retrieve contents. This information is then used to identify matches with current trending dynamic data //
-  useEffect((intersect) => {
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const url = `${DB_URL}api/v1/coins`;
@@ -82,7 +82,7 @@ const Coins = (props) => {
     };
     fetchData();
     // setMatchData();
-  }, []);
+  }, [setDbContents]);
 
   // Responsible for calling database on each 'matched' coin, returning relevant data //
   // useEffect(() => {
@@ -153,8 +153,8 @@ const Coins = (props) => {
   //   }
   // };
 
-  console.log(props.matchedCoins);
-
+  // console.log(props.matchedCoins);
+  console.log(dbContents);
   return (
     <div className="coins-app">
       <header className="coins-head">

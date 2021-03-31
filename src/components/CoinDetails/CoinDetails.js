@@ -124,7 +124,6 @@ const CoinDetails = (props) => {
           })
           .then((responseJson) => {
             setMatchedUpVotes(parseInt(responseJson.up_votes));
-            console.log(matchedUpVotes);
             setMatchedDownVotes(parseInt(responseJson.down_votes));
           });
       } catch (err) {
