@@ -17,18 +17,14 @@ const CoinDetails = (props) => {
   let [matchedDownVotes, setMatchedDownVotes] = useState(0);
   let { id } = useParams();
   let { setCoinDetails } = props;
-  const DB_URL = process.env.REACT_APP_DATABASE_URL;
+  const DB_URL = process.env.REACT_APP_CRYPTO_DATABASE_URL;
 
   const updateUpVotes = () => {
-    setMatchedUpVotes((matchedUpVotes += 1));
-    console.log(matchedUpVotes);
-    // return matchedUpVotes;
+    setMatchedUpVotes(parseInt((matchedUpVotes += 1)));
   };
 
   const updateDownVotes = () => {
-    setMatchedDownVotes((matchedDownVotes += 1));
-    console.log(matchedDownVotes);
-    // return matchedDownVotes;
+    setMatchedDownVotes(parseInt((matchedDownVotes += 1)));
   };
 
   useEffect(() => {
@@ -70,7 +66,7 @@ const CoinDetails = (props) => {
   const updateVotes = () => {
     const postData = async () => {
       try {
-        const url = `${DB_URL}api/v1/coins`;
+        const url = `${DB_URL}coins`;
         const options = {
           method: "POST",
           mode: "cors",
@@ -92,8 +88,8 @@ const CoinDetails = (props) => {
             return response.json();
           })
           .then((responseJson) => {
-            setMatchedUpVotes(responseJson.up_votes);
-            setMatchedDownVotes(responseJson.down_votes);
+            setMatchedUpVotes(parseInt(responseJson.up_votes));
+            setMatchedDownVotes(parseInt(responseJson.down_votes));
             return responseJson;
           });
       } catch (err) {
@@ -106,7 +102,7 @@ const CoinDetails = (props) => {
   useEffect(() => {
     const fetchVotes = async () => {
       try {
-        const votesURL = `${DB_URL}api/v1/coins/${id}`;
+        const votesURL = `${DB_URL}coins/${id}`;
         const options = {
           method: "GET",
           mode: "cors",
@@ -115,7 +111,7 @@ const CoinDetails = (props) => {
             "Content-Type": "application/json",
           },
         };
-        fetch(votesURL, options)
+        await fetch(votesURL, options)
           .then((response) => {
             if (!response.ok) {
               throw new Error("Error: " + response.status);
