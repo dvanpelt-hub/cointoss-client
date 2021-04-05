@@ -17,7 +17,7 @@ const CoinDetails = (props) => {
   let [matchedDownVotes, setMatchedDownVotes] = useState(0);
   let { id } = useParams();
   let { setCoinDetails } = props;
-  const DB_URL = process.env.REACT_APP_DATABASE_URL;
+  const DB_URL = process.env.REACT_APP_CRYPTO_DATABASE_URL;
 
   const updateUpVotes = () => {
     setMatchedUpVotes((matchedUpVotes += 1));
@@ -70,7 +70,7 @@ const CoinDetails = (props) => {
   const updateVotes = () => {
     const postData = async () => {
       try {
-        const url = `${DB_URL}api/v1/coins`;
+        const url = `${DB_URL}coins`;
         const options = {
           method: "POST",
           mode: "cors",
@@ -106,7 +106,7 @@ const CoinDetails = (props) => {
   useEffect(() => {
     const fetchVotes = async () => {
       try {
-        const votesURL = `${DB_URL}api/v1/coins/${id}`;
+        const votesURL = `${DB_URL}coins/${id}`;
         const options = {
           method: "GET",
           mode: "cors",

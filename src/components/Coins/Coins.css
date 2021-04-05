@@ -8,7 +8,7 @@
   background: linear-gradient(-65deg, #120838, #2e198f, #5b1888, #a81aad);
   background-size: 350% 350%;
   position: relative;
-  animation: change 14s ease-in-out infinite;
+  animation: change 5s ease-in-out infinite;
 }
 
 .coins-head h1 {

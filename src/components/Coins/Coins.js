@@ -4,11 +4,11 @@ import "./Coins.css";
 import Nav from "../Nav/Nav";
 import { Link } from "react-router-dom";
 
-let DB_URL = process.env.REACT_APP_DATABASE_URL;
+let DB_URL = process.env.REACT_APP_CRYPTO_DATABASE_URL;
 let URL = process.env.REACT_APP_GECKO_TRENDING;
 
 const Coins = (props) => {
-  let { dbContents, setDbContents } = props;
+  let { setDbContents } = props;
   let [currentCoins, setCurrentCoins] = React.useState([]);
   // let [currentVotes, setCurrentVotes] = React.useState([]);
   // let [matchedVotes, setMatchedVotes] = React.useState([]);
@@ -57,7 +57,7 @@ const Coins = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const url = `${DB_URL}api/v1/coins`;
+        const url = `${DB_URL}coins`;
         const options = {
           method: "GET",
           mode: "cors",
@@ -154,7 +154,7 @@ const Coins = (props) => {
   // };
 
   // console.log(props.matchedCoins);
-  console.log(dbContents);
+  // console.log(dbContents);
   return (
     <div className="coins-app">
       <header className="coins-head">
