@@ -38,16 +38,6 @@ const Coins = (props) => {
   // // Assigning 'matches' between two lists to variable //
   // const intersect = firstList.filter((element) => secondList.includes(element));
 
-  // API Call to coin gecko for the top 7 trending crypto-currencies. Handled by the onClick button usage //
-  const getCoins = () => {
-    fetch(URL)
-      .then((response) => response.json())
-      .then((responseJson) => {
-        setCurrentCoins(responseJson.coins);
-      })
-      .catch((error) => console.log("error", error));
-  };
-
   // const setMatch = (intersect) => {
   //   console.log("test");
   //   props.setMatchedCoins(intersect);
@@ -81,6 +71,7 @@ const Coins = (props) => {
       }
     };
     const fetchCoins = async () => {
+      // API Call to coin gecko for the top 7 trending crypto-currencies. Handled by the onClick button usage //
       fetch(URL)
         .then((response) => response.json())
         .then((responseJson) => {
@@ -170,17 +161,6 @@ const Coins = (props) => {
         <h1>Trending Coins</h1>
       </header>
       <Nav />
-      <div className="getCoinsButtonArea">
-        <button className="getCoinsButton" onClick={getCoins}>
-          Get Coins
-        </button>
-        {/* <button className="getCoinsButton" onClick={fetchVotes}>
-          Get Votes
-        </button> */}
-        {/* <button className="getCoinsButton" onClick={tester}>
-          Test
-        </button> */}
-      </div>
       <div className="coins-holdings-table">
         <table>
           <thead>

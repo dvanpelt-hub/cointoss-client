@@ -14,12 +14,6 @@ function Nav() {
           <Link className="coins" to="/coins">
             Coins
           </Link>
-          {/* <Link className="signup" to="/signup">
-            Sign Up
-          </Link>
-          <Link className="login" to="/login">
-            Log in
-          </Link> */}
         </div>
       </div>
     </div>
