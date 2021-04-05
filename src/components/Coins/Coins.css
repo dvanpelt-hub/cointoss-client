@@ -3,23 +3,24 @@
   font-size: 13px;
   font-family: "Quicksand", Arial, sans-serif;
   width: 100%;
-  height: 150vh;
+  height: 100vh;
   color: #fff;
   background: linear-gradient(-65deg, #120838, #2e198f, #5b1888, #a81aad);
   background-size: 350% 350%;
   position: relative;
   animation: change 5s ease-in-out infinite;
+  padding-bottom: 20px;
 }
 
 .coins-head h1 {
-  font-size: 30px;
+  font-size: 32px;
   letter-spacing: 2px;
   text-align: center;
   position: absolute;
   top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 1.5rem 3rem;
+  margin-top: 3rem;
 }
 
 .coins-holdings-table table {
@@ -95,7 +96,7 @@ td.voteOfTable {
   padding: 10px;
   margin-left: 25px;
   margin-right: 25px;
-  margin-top: 6rem;
+  margin-top: 8rem;
   border-radius: 10px;
   border: none;
   background-color: rgb(147, 39, 161);

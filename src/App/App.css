@@ -7,6 +7,22 @@
 
 html {
   height: 100%;
+}
+
+@keyframes change {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+body {
+  height: 100%;
   font-size: 13px;
   font-family: "Major Mono", Arial, sans-serif;
   width: 100%;
@@ -19,11 +35,7 @@ html {
     #b6479e,
     #e073c5
   );
-  background-size: 250% 250%;
+  background-size: 200% 200%;
   position: relative;
-  animation: change 8s ease-in-out infinite;
+  animation: change 5s ease-in-out infinite;
 }
-
-/* body {
-  
-} */
