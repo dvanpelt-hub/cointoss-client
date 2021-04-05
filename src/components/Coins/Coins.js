@@ -80,7 +80,16 @@ const Coins = (props) => {
         console.log(err);
       }
     };
+    const fetchCoins = async () => {
+      fetch(URL)
+        .then((response) => response.json())
+        .then((responseJson) => {
+          setCurrentCoins(responseJson.coins);
+        })
+        .catch((error) => console.log("error", error));
+    };
     fetchData();
+    fetchCoins();
     // setMatchData();
   }, [setDbContents]);
 
