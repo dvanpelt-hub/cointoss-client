@@ -20,15 +20,11 @@ const CoinDetails = (props) => {
   const DB_URL = process.env.REACT_APP_CRYPTO_DATABASE_URL;
 
   const updateUpVotes = () => {
-    setMatchedUpVotes((matchedUpVotes += 1));
-    console.log(matchedUpVotes);
-    // return matchedUpVotes;
+    setMatchedUpVotes(parseInt((matchedUpVotes += 1)));
   };
 
   const updateDownVotes = () => {
-    setMatchedDownVotes((matchedDownVotes += 1));
-    console.log(matchedDownVotes);
-    // return matchedDownVotes;
+    setMatchedDownVotes(parseInt((matchedDownVotes += 1)));
   };
 
   useEffect(() => {
@@ -92,8 +88,8 @@ const CoinDetails = (props) => {
             return response.json();
           })
           .then((responseJson) => {
-            setMatchedUpVotes(responseJson.up_votes);
-            setMatchedDownVotes(responseJson.down_votes);
+            setMatchedUpVotes(parseInt(responseJson.up_votes));
+            setMatchedDownVotes(parseInt(responseJson.down_votes));
             return responseJson;
           });
       } catch (err) {
@@ -115,7 +111,7 @@ const CoinDetails = (props) => {
             "Content-Type": "application/json",
           },
         };
-        fetch(votesURL, options)
+        await fetch(votesURL, options)
           .then((response) => {
             if (!response.ok) {
               throw new Error("Error: " + response.status);
