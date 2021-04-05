@@ -3,13 +3,14 @@
   font-size: 13px;
   font-family: "Quicksand", Arial, sans-serif;
   width: 100%;
-  min-height: 180vh;
-  max-height: 300vh;
+  min-height: 100vh;
+  max-height: 400vh;
   color: #fff;
   background: linear-gradient(-65deg, #120838, #2e198f, #5b1888, #a81aad);
   background-size: 350% 350%;
   position: relative;
   animation: change 5s ease-in-out infinite;
+  padding-bottom: 60px;
 }
 
 .details-head h1 {
