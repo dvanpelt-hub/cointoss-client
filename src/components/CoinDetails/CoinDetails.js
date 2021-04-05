@@ -90,6 +90,7 @@ const CoinDetails = (props) => {
           .then((responseJson) => {
             setMatchedUpVotes(parseInt(responseJson.up_votes));
             setMatchedDownVotes(parseInt(responseJson.down_votes));
+            alert("You have cast your vote successfully!");
             return responseJson;
           });
       } catch (err) {
