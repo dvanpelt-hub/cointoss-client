@@ -7,7 +7,7 @@
   max-height: 400vh;
   color: #fff;
   background: linear-gradient(-65deg, #120838, #2e198f, #5b1888, #a81aad);
-  background-size: 350% 350%;
+  background-size: 190% 190%;
   position: relative;
   animation: change 5s ease-in-out infinite;
   padding-bottom: 60px;
@@ -147,6 +147,8 @@ p {
     margin-top: 5%;
     font-size: 24px;
     text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
   }
 
   .coinLink {
