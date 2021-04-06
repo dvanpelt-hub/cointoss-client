@@ -165,12 +165,12 @@ const Coins = (props) => {
         <table>
           <thead>
             <tr className="tableRow">
-              {/* <th className="coinHead" scope="column1">
+              <th className="coinHead" scope="column1">
                 Coins
-              </th> */}
-              {/* <th className="voteHead" scope="column2">
+              </th>
+              <th className="voteHead" scope="column2">
                 Votes
-              </th> */}
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -185,7 +185,7 @@ const Coins = (props) => {
                       {coin.item.name}
                     </Link>
                   </td>
-                  {/* <td className="voteOfTable">{`0 | 0`}</td> */}
+                  <td className="voteOfTable">{`0 | 0`}</td>
                 </tr>
               );
             })}
