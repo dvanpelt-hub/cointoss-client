@@ -163,16 +163,16 @@ const Coins = (props) => {
       <Nav />
       <div className="coins-holdings-table">
         <table>
-          <thead>
-            <tr className="tableRow">
-              <th className="coinHead" scope="column1">
+          {/* <thead>
+            <tr className="tableRow"> */}
+          {/* <th className="coinHead" scope="column1">
                 Coins
-              </th>
-              <th className="voteHead" scope="column2">
+              </th> */}
+          {/* <th className="voteHead" scope="column2">
                 Votes
-              </th>
-            </tr>
-          </thead>
+              </th> */}
+          {/* </tr>
+          </thead> */}
           <tbody>
             {currentCoins.map((coin) => {
               return (
@@ -185,7 +185,7 @@ const Coins = (props) => {
                       {coin.item.name}
                     </Link>
                   </td>
-                  <td className="voteOfTable">{`0 | 0`}</td>
+                  {/* <td className="voteOfTable">{`0 | 0`}</td> */}
                 </tr>
               );
             })}

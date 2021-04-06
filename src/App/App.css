@@ -35,7 +35,7 @@ body {
     #b6479e,
     #e073c5
   );
-  background-size: 190% 190%;
+  background-size: 200% 200%;
   position: relative;
   animation: change 5s ease-in-out infinite;
 }

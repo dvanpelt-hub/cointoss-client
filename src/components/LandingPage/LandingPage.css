@@ -40,10 +40,18 @@
   border-width: 0px;
 }
 
-h2,
+.slogan {
+  margin-top: 3.2rem;
+}
+
 p {
   text-align: center;
   margin: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 20px;
 }
 
 .info {
