@@ -62,8 +62,8 @@ th {
 }
 
 th.coinHead {
-  text-align: center;
-  font-size: 50px;
+  text-align: left;
+  font-size: 20px;
 }
 
 th.voteHead {
@@ -88,6 +88,7 @@ a.coinOfTable:hover {
 td {
   padding-top: 10px;
   padding-bottom: 10px;
+  text-align: left;
 }
 
 td.voteOfTable {
