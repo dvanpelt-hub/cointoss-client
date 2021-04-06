@@ -21,14 +21,14 @@
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 1.5rem 3rem;
-  margin-top: 3rem;
+  margin-top: 4.5rem;
 }
 
 .votes-area {
   font-size: 15px;
   letter-spacing: 2px;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 9rem;
 }
 
 .votes-area span {
