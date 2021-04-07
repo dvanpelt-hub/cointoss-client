@@ -27,13 +27,14 @@
 
 @media (min-width: 500px) {
   .Nav {
-    text-align: center;
+    font-size: 20px;
   }
 
   .landing,
   .coins,
   .details {
     margin: 10px;
-    padding: 10px;
+    padding-left: 40px;
+    padding-bottom: 10px;
   }
 }

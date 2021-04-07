@@ -28,8 +28,7 @@ const CoinDetails = (props) => {
   };
 
   useEffect(() => {
-    // add in coin price fetch call here //
-
+    // Fetch details of coin from Coin Gecko API and set to state //
     const fetchCoinData = async () => {
       try {
         const url = `${URL}/${id}`;
@@ -63,6 +62,7 @@ const CoinDetails = (props) => {
     setCoinHomepage,
   ]);
 
+  // Posts new votes to database and updates state //
   const updateVotes = () => {
     const postData = async () => {
       try {
@@ -100,6 +100,7 @@ const CoinDetails = (props) => {
     postData();
   };
 
+  // Fetches details from database pertaining to the selected coin //
   useEffect(() => {
     const fetchVotes = async () => {
       try {
@@ -151,11 +152,8 @@ const CoinDetails = (props) => {
           Down Vote
         </button>
         <button onClick={updateVotes} className="getVotesButton">
-          Post
+          Post Vote
         </button>
-        {/* <button onClick={fetchVotes} className="getVotesButton">
-          Votes
-        </button> */}
       </div>
       <section className="coin-details">
         <img
@@ -164,7 +162,8 @@ const CoinDetails = (props) => {
         ></img>
         <h2>Current Price = ${parseFloat(currentPrice).toFixed(2)}</h2>
         <p>{coinDescription}</p>
-        <p>Twitter Followers: {coinFollowers}</p>
+        <hr />
+        <p className="twitterFollowers">Twitter Followers: {coinFollowers}</p>
         <a href={coinHomepage} className="coinLink">
           Website: {coinHomepage}
         </a>
