@@ -13,6 +13,18 @@
   padding-bottom: 60px;
 }
 
+@keyframes change {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
 .details-head h1 {
   font-size: 28px;
   letter-spacing: 2px;
@@ -45,7 +57,7 @@
   color: white;
   text-decoration: none;
   padding: 15px;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .coinLink:hover {
@@ -86,16 +98,9 @@
   margin-top: 1rem;
 }
 
-@keyframes change {
-  0% {
-    background-position: 0 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0 50%;
-  }
+hr {
+  width: 40px;
+  margin: auto;
 }
 
 h2,
@@ -109,8 +114,8 @@ h3 {
   font-size: 20px;
 }
 
-p {
-  font-size: 16px;
+.twitterFollowers {
+  font-size: 22px;
 }
 
 @media screen and (min-width: 500px) {
@@ -195,9 +200,5 @@ p {
 
   h3 {
     font-size: 35px;
-  }
-
-  p {
-    font-size: 26px;
   }
 }

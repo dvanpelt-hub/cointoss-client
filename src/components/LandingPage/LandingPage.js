@@ -16,7 +16,7 @@ function LandingPage() {
         <section className="slogan">
           <h2>Trending cryptocurrencies in the palm of your hand</h2>
           <div className="landing-info">
-            <p>
+            <p className="info">
               View the top seven trending cryptocurrencies on Coin Gecko and
               cast your votes for your favorites!
             </p>
