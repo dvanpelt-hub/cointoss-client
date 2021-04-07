@@ -14,11 +14,17 @@ function LandingPage() {
       <Nav />
       <div className="slogan">
         <section className="slogan">
-          <h2>
-            Trending cryptocurrencies in the palm of your hand. Cast your votes!
-          </h2>
+          <h2>Trending cryptocurrencies in the palm of your hand</h2>
           <div className="landing-info">
-            <p>This is information for the app. How to use it, etc.</p>
+            <p>
+              View the top seven trending cryptocurrencies on Coin Gecko and
+              cast your votes for your favorites!
+            </p>
+          </div>
+          <div className="getStarted">
+            <p className="start">
+              Select the Coin Toss icon below to get started!
+            </p>
           </div>
         </section>
       </div>

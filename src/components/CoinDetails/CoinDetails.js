@@ -110,6 +110,7 @@ const CoinDetails = (props) => {
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
           },
         };
         await fetch(votesURL, options)

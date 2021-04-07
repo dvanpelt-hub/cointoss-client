@@ -6,28 +6,11 @@
   height: 100vh;
   color: #fff;
   background: linear-gradient(-65deg, #120838, #2e198f, #5b1888, #a81aad);
-  background-size: 350% 350%;
+  background-size: 190% 190%;
   position: relative;
   animation: change 5s ease-in-out infinite;
-  padding-bottom: 20px;
-}
-
-.coins-head h1 {
-  font-size: 32px;
-  letter-spacing: 2px;
-  text-align: center;
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-top: 3rem;
-}
-
-.coins-holdings-table table {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 8%;
-  width: 80%;
+  padding-bottom: 10px;
+  /* padding-top: 10px; */
 }
 
 @keyframes change {
@@ -42,6 +25,24 @@
   }
 }
 
+.coins-head h1 {
+  font-size: 32px;
+  letter-spacing: 2px;
+  text-align: center;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 3rem;
+}
+
+.coins-holdings-table table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 48%;
+  width: 80%;
+}
+
 h2,
 p {
   text-align: center;
@@ -50,7 +51,7 @@ p {
 
 .listedCoins {
   text-align: center;
-  font-size: 15px;
+  font-size: 18px;
   font-family: "Quicksand", Arial, sans-serif;
   text-decoration: none;
   margin-top: 20px;
@@ -63,7 +64,7 @@ th {
 
 th.coinHead {
   text-align: center;
-  font-size: 50px;
+  font-size: 20px;
 }
 
 th.voteHead {
@@ -73,16 +74,19 @@ th.voteHead {
 a.coinOfTable {
   color: white;
   text-decoration: none;
-  left: 0;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
 }
 
 a.coinOfTable:hover {
   background-color: rgb(147, 39, 161);
   border-radius: 10px;
   min-width: 40px;
+}
+
+td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
 }
 
 td.voteOfTable {
@@ -92,46 +96,25 @@ td.voteOfTable {
   padding-bottom: 10px;
 }
 
-.getCoinsButton {
-  padding: 10px;
-  margin-left: 25px;
-  margin-right: 25px;
-  margin-top: 8rem;
-  border-radius: 10px;
-  border: none;
-  background-color: rgb(147, 39, 161);
-  color: white;
-  font-family: "Quicksand", Arial, sans-serif;
-  letter-spacing: 2px;
-  font-weight: bolder;
-}
-
-.getCoinsButton:hover {
-  background-color: rgb(212, 0, 255);
-  cursor: pointer;
-}
-
-.getCoinsButtonArea {
-  text-align: center;
-}
-
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 800px) {
   .coins-app {
     font-size: 20px;
     height: 150vh;
   }
 
   .coins-head h1 {
-    font-size: 45px;
+    font-weight: bolder;
+    color: rgb(235, 198, 240);
+    font-size: 50px;
     top: 10%;
     left: 50%;
-    padding: 1.5rem 3rem;
+    padding: 2rem 3rem;
   }
 
-  .coins-holdings-table table {
+  .coins-holdings-table {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 8%;
+    margin-top: 20%;
     width: 80%;
   }
 
@@ -146,15 +129,13 @@ td.voteOfTable {
     margin-top: 20px;
   }
 
-  th {
+  /* th {
     font-size: 25px;
     padding: 15px;
-  }
+  } */
   a.coinOfTable {
     text-align: center;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-bottom: 10px;
+    padding: 10px;
   }
 
   a.coinOfTable:hover {
@@ -165,27 +146,18 @@ td.voteOfTable {
   td {
     text-align: center;
     padding: 1rem;
-    font-size: 50px;
+    font-size: 35px;
   }
+}
 
-  /* td.voteOfTable {
+@media screen and (min-width: 1200px) {
+  .coins-holdings-table table {
+    margin-top: 10%;
+  }
+}
+/* td.voteOfTable {
     text-align: right;
     padding-right: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
   } */
-
-  .getCoinsButton {
-    font-size: 25px;
-    padding: 25px;
-    margin-left: 25px;
-    margin-right: 25px;
-    margin-top: 16rem;
-    border-radius: 10px;
-    border: none;
-    background-color: rgb(147, 39, 161);
-    color: white;
-    letter-spacing: 2px;
-    font-weight: bolder;
-  }
-}

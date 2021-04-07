@@ -1,14 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Quicksand:wght@300&display=swap");
+
 .Nav {
-  text-align: end;
+  text-align: start;
+  padding-right: 10px;
+  background-color: rgb(44, 14, 58);
 }
 
 .landing,
 .coins,
-.details,
-.signup,
-.login {
+.details {
+  font-family: "Quicksand";
+  font-weight: bolder;
   text-decoration: none;
-  color: rgb(240, 140, 198);
+  color: rgb(235, 206, 223);
   display: inline-block;
   margin: 5px;
   padding: 5px;
@@ -16,59 +20,20 @@
 
 .landing:hover,
 .coins:hover,
-.details:hover,
-.signup:hover,
-.login:hover {
+.details:hover {
   color: white;
-  cursor: pointer;
-}
-
-.dropdown {
-  display: inline-block;
-  padding: 10px;
-  margin: 10px;
-  border: 2px solid pink;
-}
-
-.dropdown-content {
-  left: 0;
-  display: none;
-  position: center;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: 12px 16px;
-  z-index: 1;
-}
-
-.dropdown:hover .dropdown-content {
-  display: inline-block;
   cursor: pointer;
 }
 
 @media screen and (min-width: 500px) {
   .Nav {
-    text-align: end;
+    text-align: center;
   }
 
   .landing,
   .coins,
-  .details,
-  .signup,
-  .login {
+  .details {
     margin: 10px;
     padding: 10px;
-  }
-
-  .dropdown {
-    font-size: 18px;
-    padding: 20px;
-    margin: 20px;
-  }
-
-  .dropdown-content {
-    font-size: 18px;
-    min-width: 300px;
-    padding: 15px 20px;
   }
 }
