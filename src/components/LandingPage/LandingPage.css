@@ -1,22 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Quicksand:wght@300&display=swap");
-/* .landing-head {
-  font-size: 13px;
-  font-family: "Major Mono", Arial, sans-serif;
-  width: 100%;
-  height: 40rem;
-  color: #fff;
-  background: linear-gradient(
-    -65deg,
-    #120838,
-    #2e198f,
-    #762e88,
-    #b6479e,
-    #e073c5
-  );
-  background-size: 250% 250%;
-  position: relative;
-  animation: change 8s ease-in-out infinite;
-} */
 
 .cointoss-head h1 {
   background-color: rgb(128, 0, 96);
