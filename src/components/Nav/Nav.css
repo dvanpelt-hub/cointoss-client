@@ -25,7 +25,7 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 500px) {
+@media (min-width: 500px) {
   .Nav {
     text-align: center;
   }
