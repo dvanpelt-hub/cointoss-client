@@ -1,22 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Quicksand:wght@300&display=swap");
-/* .landing-head {
-  font-size: 13px;
-  font-family: "Major Mono", Arial, sans-serif;
-  width: 100%;
-  height: 40rem;
-  color: #fff;
-  background: linear-gradient(
-    -65deg,
-    #120838,
-    #2e198f,
-    #762e88,
-    #b6479e,
-    #e073c5
-  );
-  background-size: 250% 250%;
-  position: relative;
-  animation: change 8s ease-in-out infinite;
-} */
 
 .cointoss-head h1 {
   background-color: rgb(128, 0, 96);
@@ -27,7 +9,7 @@
   position: absolute;
   border: 0px solid #fff;
   border-radius: 10px;
-  top: 50%;
+  top: 75%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 1rem 1rem;
@@ -40,6 +22,10 @@
   border-width: 0px;
 }
 
+.landing-info {
+  margin-top: 50px;
+}
+
 .slogan {
   margin-top: 3.2rem;
 }
@@ -49,12 +35,19 @@ p {
   margin: 20px;
 }
 
+.getStarted {
+  margin-top: 4rem;
+}
+
 h2 {
+  font-size: 30px;
   text-align: center;
   margin-top: 20px;
 }
 
-.info {
-  min-height: 40rem;
-  background: linear-gradient(120deg, #bd9bf3 0%, #936bd3 51%, #1e5569 85%);
+h2,
+p,
+.start {
+  padding-left: 10px;
+  padding-right: 10px;
 }
